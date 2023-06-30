@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll_no</title>
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+        #rno{
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            background-color: rgb(34, 9, 33);
+            font-size: 16px;
+            color: white;
+            border: 2px solid white;
+        }
+        #sub{
+            width: 80px;
+            height: 30px;
+            border-radius: 10px;
+            border: 2px solid white;
+            background-color: orange
+            
+        }
+       .test {
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            background-color: rgb(168, 178, 32);
+            font-size: 20px;
+          border-radius: 10px;
+          border: 2px solid white;  
+        }
+        table,tr,th,td{
+            padding: 15px;
+            border: 1px solid black;
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+    <script src="./js_rollno_task9.js"></script>
+
+</head>
+<body> 
+    <center>
+    <form action="">
+        <select  name="rno" id="rno" >
+            <option value="" hidden>select Roll No</option>
+            <option value="100">100</option>
+            <option value="101">101</option>
+            <option value="102">102</option>
+            <option value="103">103</option>
+        </select>
+        <!-- <input type="text" name="rno" id="rno" placeholder="Enter Roll Number">  -->
+        &nbsp; &nbsp;
+        <input type="button" onclick="getvalue()" value="Submit" id="sub">  &nbsp; &nbsp;
+        <span id="demo" style="color:brown"></span>
+    </form>
+
+    <hr><hr>
+
+    <table id="mytable" hidden >
+        <tr><td colspan="2"align="center" ><img src="./cloth_img/img1box.jpg" width="150px" height="150px" alt=""></td><td colspan="4" align="center"> <h1>Subject</h1> </td> <td colspan="2" align="center"><h1>Mark</h1></td></tr>
+        <tr>
+            <th>Roll-No</th> 
+             <th>Name </th>
+             <th>English</th>
+             <th>Math </th>
+             <th>Sciense</th>
+             <th>Geography</th>
+             <th>Total </th>
+             <th>Persentage </th>
+       </tr>
+        <tr>
+            <td><Span id="rolln"> 100 </Span></td>
+            <td><h3> Munna Sharma </h3></td>
+            <td><input class="test" type="text" id="mark1"></td>
+            <td><input class="test" type="text" id="mark2"></td>
+            <td><input class="test" type="text" id="mark3"></td>
+            <td><input class="test" type="text" id="mark4"></td>
+
+            <td><input class="test" type="text"  id="mark5"></td>
+            <td><input class="test" type="text"  id="mark6"></td>
+           
+        </tr>
+        <tr> <td colspan="2" align="center">  <input type="submit" value="Submit" onclick="tmark()" class="test"></td> </tr>
+       <tr><td><span id="validate"></span></td></tr>
+    </table>
+    <!-- <p id="test">test</p> -->
+</center>
+</body>
+</html>

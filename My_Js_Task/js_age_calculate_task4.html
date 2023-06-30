@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #DOB{
+            width: 200px; height: 30px;
+            border-radius: 5px;
+        }
+        b{
+            font-size: 20px;
+        }
+        button{
+            width: 150px; height: 30px;
+            font-size: 15px;
+            border-radius: 15px;
+        }
+       button:hover{
+            transform: scale(1.1);
+            background-color: rgb(255, 80, 153);
+        }
+       #DOB:hover{
+            transform: scale(1.1);
+            background-color: rgb(210, 236, 95);
+        }
+        table ,tr ,td{
+          line-height: 50px;
+          letter-spacing: 2px;
+          /* border: 1px solid blue; */
+          padding: 20px;
+          width: 700px;
+        }
+        table{
+          border: 3px dotted black;
+        }
+    </style>
+    <title>Age calc</title>
+
+<script>
+
+function ageCalculator() {
+               //collect input from HTML form and convert into date format
+    var userinput = document.getElementById("DOB").value;
+    var dob = new Date(userinput);  
+    
+             //check user provide input or not
+    if(userinput==null || userinput=='')
+    {
+      alert("Please Choose a date !!!");  
+      return false; 
+    } 
+    
+           //execute if user entered a date 
+    else {
+         //extract and collect only date from date-time string
+    var mdate = userinput.toString();
+    var dobYear = parseInt(mdate.substring(0,4), 10);
+    var dobMonth = parseInt(mdate.substring(5,7), 10);
+    var dobDate = parseInt(mdate.substring(8,10), 10);
+    
+         //get the current date from system
+    var today = new Date();
+         //date string after broking
+    var birthday = new Date(dobYear, dobMonth-1, dobDate);
+    
+         //calculate the difference of dates
+    var diffInMillisecond = today.valueOf() - birthday.valueOf();
+
+         //convert the difference in milliseconds and store in day and year variable        
+    var year_age = Math.floor(diffInMillisecond / 31536000000);
+    var day_age = Math.floor((diffInMillisecond % 31536000000) / 86400000);
+
+     
+     var month_age = Math.floor(day_age/30);        
+     day_age = day_age % 30;
+        
+     var tMnt= (month_age + (year_age*12));
+     var tDays =(tMnt*30) + day_age;
+     
+          //DOB is greater than today?s date, generate an error: Invalid date  
+     if (dob>today) {
+        document.getElementById("result").innerHTML = ("Invalid date input - Please try again!");
+      }
+      else {
+        document.getElementById("syst").innerHTML =today;
+        document.getElementById("result").innerHTML = year_age + " years " + month_age + " months " + day_age + " days"
+      }
+   }
+}
+</script>
+</head>
+<body>
+<center>
+ <h1 style="color: #008CBA" align="center"> Calculate The Age  </h1> 
+<table>
+ <tr> <td><b> Enter Date of Birth:</b> </td> <td> <input type=date id = DOB> </td></tr> 
+ <tr> <td> </td> <td> <button type="submit" onclick = "ageCalculator()"> Calculate age </button></td></tr> 
+ <tr> <td>  <span><b> System Date:</b></span> </td> <td> <span id="syst"></span> </td></tr> 
+ <tr> <td> <span><b>Date Of Birth:</b></span> </td> <td><h3 style="color:#070bf8" id="result" align="center"></h3> </td></tr> 
+</table>
+   
+     <!-- <span id = "message" style="color:red"> </span> <br><br>   -->
+
+       
+   </center>
+ </body>
+</html>

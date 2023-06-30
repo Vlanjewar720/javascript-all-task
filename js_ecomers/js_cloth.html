@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-cloth</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <style>
+      body{
+        background-color: teal;
+
+      }
+        #cloth{
+            width: 300px;
+            height: 40px;
+            font-size: 20px;
+            /* border: 2px solid black; */
+            border-radius: 10px;
+            padding-left: 60px;
+            box-shadow: 0px 0px 1px 1px blue;
+            background-color: lightblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+      
+        .box{
+          width: 350px;
+          height: 450px;
+          border-radius: 30px;
+          float: right;
+          margin: 10px;
+          box-shadow: 0px 0px 2px 2px teal;
+          /* background-color: rgb(63, 148, 205); */
+          background-color: rgb(8, 177, 177);
+
+       
+        
+        }
+        table,tr,td{
+          /* border:1px solid black; */
+          padding: 9px;
+          margin-left: 0px;
+          font-size: px;
+          font-family: monospace;
+          font-weight: bold;
+        }
+        #bott{
+          width: 100px;
+          border-radius: 10px;
+          background-color: rgb(23, 205, 138);
+          box-shadow: 0px 0px 1px 1px teal;
+        }
+        .btnbox{
+          width: 100px;
+          border-radius: 15px;
+          /* background-color: gold; */
+          background-color: rgb(46, 217, 154);
+        
+        }
+        .card{
+          background-color: rgb(20, 201, 201);
+          box-shadow: 0px 0px 2px 2px teal;
+        }
+        select{
+          width: 50px;
+          background-color: rgb(204, 241, 39);
+          border-radius: 10px;
+        }
+       
+    </style>
+    <script src="./js_cloth.js"></script>
+</head>
+<body>
+    <center>
+        <form action="">
+            <div class="container mt-4">
+            <select onchange="ok()" name="cloth" id="cloth" value="handred">
+                <optgroup label="Mens Wear"> 
+                    <option value=" "selected hidden>Choose category</option> 
+                    <option value="T-Shirt">T-Shirt</option>    
+                    <option value="jinsee">Jeans</option>    
+                    <option value="Shirt">Shirt</option>    
+                </optgroup>
+                <optgroup label="woman Wear"> 
+                    <option value="Top">Top</option>    
+                    <option value="Jinsee">Jeans</option>    
+                    <option value="Kurti">Kurti</option>    
+                </optgroup>
+                <optgroup label="Kids Wear"> 
+                     <option value="T-shirt">T-shirt</option>
+                     <option value="Jinse">Jeans</option>
+                     <option value="Sherwani">Sherwai</option>
+                </optgroup>
+            </select>
+        </div>  
+            <br><br><hr>
+        
+        </form>
+        <div class="box">
+          <table>
+             <span style="font-size: 20px;">Buy Summary</span> <hr>
+          <tr> <td><span>Item Name:</span></td><td><span id="iname"></span> </td></tr> 
+          <tr> <td><span>Item size:</span></td><td><span id="isize"></span> </td></tr> 
+          <tr> <td><span>Item Qut:</span></td><td><span id="iqut"></span> </td></tr> 
+          <tr> <td><span>Item Price:</span></td><td><span id="iprice"></span> </td></tr>  
+          <tr> <td><span>Dilivery:</span></td><td><span id="deliv"></span> </td></tr> 
+          <tr> <td><span>Total Amount:</span></td><td><span id="tamount"></span> </td></tr> 
+
+          <tr> <td><input type="reset" id="bott" value="Reset" onclick="closevalue()"></td><td><input type="button" id="bott" value="Print" onclick="print()"> </td></tr>
+        </table>
+        </div>
+        
+        <div id="shirt"> </div>
+        <div class="container-fluid">
+          <table></table>
+            <!-- card 1 -->
+            <div class="card mb-3" style="max-width: 600px;" id="shirt1" hidden>
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./cloth_img/T-shirt3.webp" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h5 class="card-title"><span  id="inm" value="T-Shirt" > Black High Neck With Zip Cotton Full Sleeve T-Shirt</span></h5>
+                      <p class="card-text">&#11088;&#x2B50;&#11088;&#x2B50;&#11088; </p>
+                      <p class="card-text"><h2 id="iprice"  >₹549.00</h2></p>
+                      <span id="iprice" value="₹549.00"></span>
+                      <p class="card-text">
+                        <label for="">Select Size:</label>
+                        <input type="radio" name="checkbox" value="M"> M  <input type="radio" name="checkbox" value="L"> L  <input type="radio" name="checkbox" value="XL"> XL 
+                      </p>
+                      <label >Qnt:</label>
+                        <select name="" id="qty">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        
+                        </select> &nbsp;
+                        <input type="submit" value="Add to Cart" onclick="getvalue()" class="btnbox"> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- card 2 -->
+              <div class="card mb-3 " style="max-width: 600px;" id="shirt2" hidden>
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./cloth_img/t-shirt2.webp" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Plain Men's Tshirt - Grey Camo</h5>
+                      <p class="card-text">&#11088;
+                        &#x2B50;&#11088;
+                        &#x2B50;&#11088;
+                        </p>
+                        <p class="card-text"><h2>₹549.00</h2></p>
+                        <p class="card-text">
+                          <label for="">Select Size:</label>
+                          <input type="radio" name="checkbox" value="M"> M  <input type="radio" name="checkbox" value="L"> L  <input type="radio" name="checkbox" value="XL"> XL 
+                        </p>
+                        <label >Qnt:</label>
+                        <select name="" id="">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        
+                        </select> &nbsp;
+                        <input type="submit" value="Add to Cart" onclick="getvalue()" class="btnbox"> 
+                        
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- jeanse pant-->
+              <div class="card mb-3" style="max-width: 540px;" id="jinse1" hidden>
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./cloth_img/jinse-1.jpg" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Plain Men's Party Wear Jeans</h5>
+                      <p class="card-text">&#11088;
+                        &#x2B50;&#11088;
+                        &#x2B50;&#11088;
+                        </p>
+                      <p class="card-text"><h2>₹749.00</h2></p>
+                      <p class="card-text">
+                        <label for="">Select Size:</label>
+                        <input type="radio" name="checkbox" value="M"> M  <input type="radio" name="checkbox" value="L"> L  <input type="radio" name="checkbox" value="XL"> XL 
+                      </p>
+                      <label >Qnt:</label>
+                        <select name="" id="">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        
+                        </select> &nbsp;
+                        <input type="submit" value="Add to Cart" onclick="getvalue()" class="btnbox"> 
+                         
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- card 2 -->
+              <div class="card mb-3 " style="max-width: 540px;" id="jinse2" hidden>
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./cloth_img/jinse3.webp" class="img-fluid rounded-start" alt="...">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Men Blue Lightly Distressed Slim Tapered Fit Jeans</h5>
+                      <p class="card-text">&#11088;
+                        &#x2B50;&#11088;
+                        &#x2B50;&#11088;
+                        </p>
+                        <p class="card-text"><h2>₹449.00</h2></p>
+                        <p class="card-text">
+                          <label for="">Select Size:</label>
+                          <input type="radio" name="checkbox" value="M"> M  <input type="radio" name="checkbox" value="L"> L  <input type="radio" name="checkbox" value="XL"> XL 
+                        </p>
+                        <label >Qnt:</label>
+                        <select name="" id="">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        
+                        </select> &nbsp;
+                        <input type="submit" value="Add to Cart" onclick="getvalue()" class="btnbox"> 
+                        
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>  
+        <!-- container -->
+      
+
+       
+            
+    <div id="result"> </div>
+</center> 
+</body>
+</html>

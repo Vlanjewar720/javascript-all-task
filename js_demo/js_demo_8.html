@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_demo_8</title>
+     <script>
+        function add()
+        {
+            alert("i am add");
+            var a= document.getElementById("fno").value;
+            var b= document.getElementById("sno").value;
+            var c= parseInt(a)+parseInt(b);
+            alert(a+"+"+b+"="+c);
+            document.getElementById("rslt").value=c;
+        }
+        function sub()
+        {
+            alert("i am Sub");
+            var a= document.getElementById("fno").value;
+            var b= document.getElementById("sno").value;
+            var c= parseInt(a)-parseInt(b);
+            alert(a+"-"+b+"="+c);
+            document.getElementById("rslt").value=c;
+        }
+        function clear()
+        {
+           document.getElementById("fno").value="";
+           document.getElementById("sno").value="";
+           document.getElementById("rslt").value="";
+        }
+     </script>
+</head>
+<body bgcolor="cyan">
+    <br><br><br>
+    <center>
+       <form action="">
+          <table>
+            <thead>
+            <tr>
+                <th colspan="2">Arithmetic application</th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+                <td>Enter first no</td>
+                <td><input type="text" id="fno" name="fno" value="" size="20"></td>
+            </tr>
+
+            <tr>
+                <td>Enter first no</td>
+                <td><input type="text" id="sno" name="sno" value="" size="20"></td>
+            </tr>
+
+            <tr>
+                <td>Result</td>
+                <td><input type="text" id="rslt" name="rslt" value="" size="20"></td>
+            </tr>
+
+            <tr>
+                
+                <td colspan="2" align="center">
+                    <input type="button" value="Add" name="Add" onclick="add()";>
+                    <input type="button" value="Sub" name="Sub" onclick="sub()"; >
+                    <input type="button" value="Reset" name="Reset " onclick="clear()"; >
+                
+                </td>
+            </tr>
+           </tbody>
+          </table>
+
+       </form>
+
+    </center>
+    
+    
+</body>
+</html>

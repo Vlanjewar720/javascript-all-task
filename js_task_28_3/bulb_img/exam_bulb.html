@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb</title>
+    <style>
+       
+        button{
+            width: 100px;
+            height: 40px;
+            border-radius: 50px;
+            color: white;
+        }
+        #boon{
+          background-color: green;
+
+      }
+      #boff{
+        background-color: red;
+      }
+    </style>
+</head>
+<body>
+    <center>
+        <!-- <button id="boff" onclick="document.getElementById('simg').src='./bulboff_2.jpg'">Bulb Off</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <button id="boon">Bulb On</button> &nbsp;&nbsp;&nbsp; <br><br> <br>
+
+        <div class="bulb"><img src="./bulboff_2.jpg" id="simg" width="300px" height="350px" alt=""> </div>
+    </center>
+    <script>
+        document.getElementById('boon').addEventListener("click",abc);
+        document.getElementById('boon').removeEventListener("click",abc);
+        
+        function abc(){
+            document.getElementById('simg').src='./bulbon2.jpg' 
+            document.getElementById('simg').src='./bulboff_2.jpg' 
+        }
+        // function xyz()
+        // {
+        //      document.getElementById('simg').removeEventListener("click",abc) ;
+        // }
+    </script>
+</body>
+</html>

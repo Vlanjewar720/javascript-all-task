@@ -1,0 +1,136 @@
+<!-- add sub mul div find from read two no -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculat2</title>
+    <style>
+        input{
+            width: 150px;
+            height: 35px;
+            border: 1 px solid rgb(245, 238, 238);
+            border-radius: 15px ;
+            margin: 10px;
+            padding: 10px;
+            background: rgb(68, 207, 114);
+            font-size: 20px;
+            border: none;
+        }
+      
+        
+        label{
+            font-size: 25px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+        form{
+            background: linear-gradient(to left,rgb(0, 255, 21),rgb(255, 0, 170));
+        }
+        
+    </style>
+   
+</head>
+<body>
+
+     <form name="form1">
+        <table align="center" >
+            <TR> <TD> <h2>MINI CALCULATOR</h2> </TD> </TR>
+            <tr> <td> <label for="text">Enter Num1</label></td><td> <input type="text" id="input1" name="input1" required > </td> </tr>
+            <tr> <td> <label for="text">Enter Num2</label></td><td> <input type="text" id="input2" name="input2" required> </td> </tr>
+            <tr><td><input type="button" id="add" onclick="Add()" value="Addition" > </td> </tr>
+            <tr> <td><input type="button" id="sub" onclick="Sub()" value="Substract"> </td> </tr>
+            <tr> <td> <input type="button" id="mul" onclick="Mul()" value="Mutiply"> </td> </tr>
+            <tr> <td> <input type="button" id="div" onclick="Div()" value="Division"> </td> </tr>
+            <tr> <td> <label for="submit" >Show Result</label></td><td> <input type="text" id="result" style="background-color: rgb(236, 226, 228);"> </td> </tr>
+            
+            
+
+
+    </table>
+     </form>
+     <script>
+
+        function Add()
+        {
+            let input1 = parseInt(document.getElementById("input1").value);
+            if(input1 ==" "){
+                alert("Please Enter number only");
+                return;
+            }else if (isNaN(input1)){
+                alert("please Enter number only");
+                return;
+            }
+
+            let input2 = parseInt(document.getElementById("input2").value);
+            if(input2 ==" "){
+            
+                alert("please Enter number only");
+
+                return;
+            }else if (isNaN(input2)){
+                alert("please Enter number only");
+
+                return;
+            }
+
+            let result = input1 + input2;
+            console.log(input1+input2)
+            document.getElementById("result").value= result ;
+        }
+       
+      
+       function Sub()
+       {
+        
+            let input1 = parseInt(document.getElementById("input1").value);
+            if(input1 ==" "){
+                alert("Please Enter first no");
+                return;
+            }else if (isNaN(input1)){
+                alert("Enter 0 - 9 number only");
+                return;
+            }
+            let input2 = parseInt(document.getElementById("input2").value);
+            let result = input1 - input2;
+            console.log(input1-input2)
+            document.getElementById("result").value= result ;
+       }
+       function Mul()
+       {
+        
+            let input1 = parseInt(document.getElementById("input1").value);
+            if(input1 ==" "){
+                alert("Please Enter first no");
+                return;
+            }else if (isNaN(input1)){
+                alert("Enter 0 - 9 number only");
+                return;
+            }
+            let input2 = parseInt(document.getElementById("input2").value);
+            let result = input1 * input2;
+            console.log(input1*input2)
+            document.getElementById("result").value= result ;
+       }
+       function Div()
+       {
+            let input1 = parseInt(document.getElementById("input1").value);
+            if(input1 ==" "){
+                alert("Please Enter first no");
+                return;
+            }else if (isNaN(input1)){
+                alert("Enter 0 - 9 number only");
+                return;
+            }
+            let input2 = parseInt(document.getElementById("input2").value);
+            let result = input1 / input2;
+            console.log(input1/input2)
+            document.getElementById("result").value= result ;
+       }
+       
+   </script>
+    
+</body>
+</html>

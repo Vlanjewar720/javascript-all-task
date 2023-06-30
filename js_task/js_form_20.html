@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #text1,#text2,#rslt{
+            width: 150px;height: 40px;font-size: 25px;
+            background-color: rgb(250, 172, 144); border-radius: 10px;
+            text-align: center;
+        }
+        label{
+            font-size: 30px;
+
+        }
+        #submit{
+            width: 100px; height: 35px; font-size: 25px;
+            border-radius: 10px;background-color: blueviolet;
+        }
+        body{
+            background-color: rgb(172, 185, 199);
+        }
+        #submit:hover{
+            width: 130px;
+            height: 40px;
+            background-color: brown;
+        }
+    </style>
+    <title>js-form</title>
+</head>
+<body> <center>
+    <form action="" name="form1">
+     <Label>first no</Label>   <input type="text" id="text1" name="text1">
+     <Label>sec no</Label>  <input type="text" id="text2" name="text2"> <br><br>
+     <Label>Result</Label>  <input type="text" id="rslt" name="rslt" > <br><br> <br>
+        <input type="button" id="submit" name="submit" value="Submit" onclick="abc()">
+    </form>
+
+    <script>
+        function abc(){
+        // let a = document.form1.text1.value;
+        // let b = document.form1.text2.value;
+        let a = parseInt( document.getElementById("text1").value);  
+            if(a ==" "){
+                alert("Please Enter Any no:");
+                return;
+            }else if (isNaN(a)){
+                alert("Please Enter 0 - 9 number only");
+                return;
+            }
+         
+
+        let b = parseInt( document.getElementById("text2").value);
+            if(b ==" "){
+                alert("Please Enter Any no:");
+                return;
+            }else if (isNaN(b)){
+                alert("Please Enter 0 - 9 number only");
+                return;
+            }
+         
+        let c = parseInt(a)+parseInt(b);
+        
+        console.log(c);
+       document.getElementById("rslt").value = c;
+
+        // document.form1.text3.value=c;
+
+        }
+
+    </script>
+</center>
+</body>
+</html>
+
+<!-- a=document.arith.fno.value;
+b=document.arith.sno.value;
+c=a+b;
+document.arith.rslt.value=c; -->

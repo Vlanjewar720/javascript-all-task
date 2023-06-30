@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select-img</title>
+    <style>
+        body{
+            background-color: rgb(70, 166, 126);
+            font-size: 20px;
+        }
+        select{
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+    </style>
+  <script src="./js_select_name.js"></script>
+</head>
+<body>
+    <center>
+        <h2>Uniq Indian People </h2>
+         <br>
+         <select name="" id="people" onchange="pecateg()">
+             <option value="" >select category</option>
+             <option value="Indian Actors" id="Actors">Indian Actors</option>
+             <option value="Indian Leaders" id="Leaders">Indian Leaders</option>
+             <option value="Indian Sportman"  id="Sportman">Indian Sportman</option>
+             <option value="Indian Bissnesman" id="Bissnesman">Indian Bissnesman</option>
+         </select> &nbsp; &nbsp; &nbsp;
+
+         <select name="pname" id="pname" >
+            <option value="">select name</option>
+         </select> &nbsp;&nbsp;&nbsp;
+         <!-- <input type="submit" value="submit" onclick="act()"> -->
+     <hr>
+     <!-- SALMAN -->
+        <div id="salm" hidden style="border: 4px solid white; width: 350px;" >
+        <img src="./peoname/salman-khan.jpg" alt="" id="imgp" width="350" height="300">
+        <div style="background-color: aquamarine; width: 350px; height: 30px;"><span id="imgtext" >SALMAN KHAN</span></div> 
+        </div>  
+        <!-- ritik  -->
+    <div id="ritik" hidden style="border: 4px solid white; width: 350px;">
+        <img src="./peoname/ritk_roshan.jpg" alt="" id="imgp" width="350" height="300">
+        <div style="background-color: aquamarine; width: 350px; height: 30px;"><span id="imgtext">RITHIK ROSHAN</span></div> 
+    </div> 
+    <!-- aKkshay -->
+    <div id="akys" hidden style="border: 4px solid white; width: 350px;">
+        <img src="./peoname/Akshay-Kumar.jpg" alt="" id="imgp" width="350" height="300">
+        <div style="background-color: aquamarine; width: 350px; height: 30px;" ><span id="imgtext">AKSHAY KUMAR</span></div> 
+    </div> 
+    <span id="name"></span>
+    
+    </center>
+    
+</body>
+</html>

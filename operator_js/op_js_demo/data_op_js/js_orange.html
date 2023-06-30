@@ -1,0 +1,32 @@
+<!-- Read price for dozen of oranges and quantity to purchase. Compute price for given quantity and 
+    //round it to nearest integer. -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>js_orange</title>
+    </head>
+    <body>
+       <script>
+        let price = prompt("The price of orange:");
+        let quty = prompt("Enter quantity of orange:");
+        document.write("the price is :"+price+"<br>");
+        document.write("The quantity is ::"+quty+"<br>");
+
+        let finlprice = price* quty;
+        
+        document.write("The final price is::"+finlprice+"<br>");
+
+        let a = finlprice;
+        let b = finlprice*10;
+        let c = b%10;
+        if(c>=5)
+        {
+            a=a+1;
+        }
+        document.write("The around price of orange is::"+a);
+       </script> 
+    </body>
+    </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imgas</title>
+    <style>
+       img{
+         display: block;
+         width: 800px;
+         margin: 0 auto;
+         transition: 0.9s;
+       }
+    </style>
+</head>
+<body>
+    <center>
+        <img src="" id="image" alt="">
+    </center>
+
+    <script>
+        let image = document.getElementById('image');
+        let images = ['mumbai_map.png','nagpur_map.png','pune_map.png',]
+
+        setInterval(function(){
+            let random = Math.floor(Math.random() *3 );
+            image.src = images[random];
+
+            },800);
+    </script>
+</body>
+</html>

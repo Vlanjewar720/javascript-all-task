@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation Form</title>
+  </head>
+  <body>
+    <center>
+      <h3>Form</h3>
+      <form action="" name="form">
+        <label for="name">Full Name :</label>
+        <input type="text" name="fname" id="fname" /><br /><br />
+
+        <label for="birth">DOB :</label>
+        <input type="date" name="calender" id="calender" /><br /><br />
+
+        <label for="email">Email ID :</label>
+        <input type="email" name="email" id="email" /><br /><br />
+
+        <label for="textarea">Address :</label>
+        <textarea name="Address" rows="2" cols="25" id="textarea"></textarea>
+        <br /><br />
+
+        <label>Gender :</label>
+        <input type="radio" name="gender" value="Male" />Male
+        <input type="radio" name="gender" value="female" />Female <br /><br />
+
+        <input type="file" id="file" value="file" />
+        <br /><br />
+
+        <label for="courses">Choose Languages :</label>
+        <input type="checkbox" name="courses" value="HTML" />HTML
+        <input type="checkbox" name="courses" value="CSS" />CSS
+        <input type="checkbox" name="courses" value="JAVASCRIPT" />JAVASCRIPT
+
+        <br /><br />
+
+        <button
+          type="button"
+          id="submitform"
+          onclick="validate()"
+          name="button"
+        >
+          Submit</button
+        ><br /><br />
+
+        <span>Full Name :</span> <span id="sum"></span><br />
+        <span>DOB :</span> <span id="sub"></span><br />
+        <span>Email :</span> <span id="mul"></span><br />
+        <span>Address :</span> <span id="div"></span><br />
+        <span>Gender :</span> <span id="mod1"></span><br />
+        <span>file :</span> <span id="mod2"></span><br />
+        <span>Choose Languages :</span> <span id="mod3"></span><br />
+      </form>
+    </center>
+    <script>
+      function validate() {
+        var name = document.getElementById("fname").value;
+        var calender = document.getElementById("calender").value;
+        var email = document.getElementById("email").value;
+        var textarea = document.getElementById("textarea").value;
+        var gender = document.getElementsByName("gender").value;
+        var file = document.getElementById("file").value;
+        // var choose = document.form.courses;
+        // var check = document.form.check;
+
+        if (name == "") {
+          alert("Enter Your Name");
+          return false;
+        }
+        if (calender == "") {
+          alert("Please fill your DOB");
+          return false;
+        }
+        if (email == "") {
+          alert("Enter Your Email");
+          return false;
+        }
+        if (textarea == "") {
+          alert("Please fill your Address");
+          return false;
+        }
+        //start
+        var gender = document.getElementsByName("gender");
+
+// Loop through each element
+var isChecked = false;
+for (var i = 0; i < gender.length; i++) {
+  // Check if the element is checked
+  if (gender[i].checked) {
+    // If it is, set the isChecked flag to true
+    isChecked = true;
+    // Display its value in an element with the ID "Gender1"
+    document.getElementById("mod1").innerHTML =  gender[i].value;
+    // Exit the loop since we've found a checked element
+    break;
+  }
+}
+
+// If no element is checked, show an error message
+if (!isChecked) {
+  alert("Please select your gender");
+  return false;
+}
+        //end
+        if (file == "") {
+          alert("Please Upload Your file");
+          return false;
+        }
+
+        var courses = document.forms[0].elements["courses"];
+var checkedCount = 0;
+var checkedValues = "";
+
+for (var i = 0; i < courses.length; i++) {
+  if (courses[i].checked) {
+    checkedCount++;
+    checkedValues += courses[i].value + ", "; // concatenate checked checkbox value to the string
+  }
+}
+if (checkedCount == 0) {
+  alert("Please select at least one course");
+  return false;
+}
+// Remove the last ", " from the checkedValues string
+checkedValues = checkedValues.substring(0, checkedValues.length - 2);
+        document.getElementById("sum").innerHTML = name;
+        document.getElementById("sub").innerHTML = calender;
+        document.getElementById("mul").innerHTML = email;
+        document.getElementById("div").innerHTML = textarea;
+        // document.getElementById("mod1").innerHTML = gender;
+        document.getElementById("mod2").innerHTML = file;
+        document.getElementById("mod3").innerHTML = checkedValues;
+      }
+    </script>
+  </body>
+</html>

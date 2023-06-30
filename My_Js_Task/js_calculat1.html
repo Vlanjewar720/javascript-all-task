@@ -1,0 +1,97 @@
+<!-- add sub mul div find from read two no -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculat1</title>
+    <style>
+        input{
+            width: 150px;
+            height: 30px;
+            border: 1 px solid rgb(245, 238, 238);
+            border-radius: 15px ;
+            margin: 10px;
+            padding: 10px;
+            background: rgb(141, 167, 216);
+            font-size: 20px;
+            border: none;
+        }
+       #btn{
+            margin-left: 40px;
+            height: 40;
+            text-align:center;
+            font-size: large;
+            font-weight: 10px;
+        }
+        label{
+            font-size: 25px;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+        form{
+            background: linear-gradient(to left,blue,red);
+        }
+        
+    </style>
+</head>
+<body>
+
+     <form name="form1">
+        
+        <table align="center" >
+          <TR> <TD> <h2>MINI CALCULATOR</h2> </TD> </TR>
+            <tr> <td> <label for="">Num1</label></td><td> <input type="text" id="input1" name="input1" > </td> </tr>
+            <tr> <td> <label for="">Num2</label></td><td> <input type="text" id="input2" name="input2"> </td> </tr>
+            <tr > <td colspan="2" > <input type="button" onclick="calc1()" value="Calculat" id="btn" style="height: 40px; background-color: rgb(156, 245, 40);"> </td> </tr>
+            <tr> <td> <label for="">Add</label></td><td> <input type="text" id="add" name="add" > </td> </tr>
+            <tr> <td> <label for="">Sub</label></td><td> <input type="text" id="sub" name="sub"> </td> </tr>
+            <tr> <td> <label for="">Mul</label></td><td> <input type="text" id="mul" name="mul"> </td> </tr>
+            <tr> <td> <label for="">Div</label></td><td> <input type="text" id="div" name="div"> </td> </tr>
+
+
+    </table>
+     </form>
+    <script>
+       
+
+        function calc1(){
+           
+            let num1 = parseInt(document.getElementById("input1").value);
+            if(num1 ==" "){
+                alert("Please Enter Any no:");
+                return false;
+            }else if (isNaN(num1)){
+                alert("Please Enter any number only");
+                return false;
+            }
+         
+            let num2 = parseInt(document.getElementById("input2").value);
+            if(num2 ==" "){
+                alert("Please Enter Any no:");
+                return;
+            }else if (isNaN(num2)){
+                alert("Please Enter any number only");
+                return;
+            }
+
+            let sum = parseInt(num1) + parseInt(num2);
+             document.getElementById("add").value = sum;
+
+             let sub = parseInt(num1) - parseInt(num2);
+             document.getElementById("sub").value = sub;
+
+             let mul = parseInt(num1) * parseInt(num2);
+             document.getElementById("mul").value = mul;
+
+             let div = parseInt(num1) / parseInt(num2);
+             document.getElementById("div").value = div;
+          
+        }
+
+        
+    </script>
+</body>
+</html>

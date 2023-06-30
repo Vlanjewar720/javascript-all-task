@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select-img</title>
+    <style>
+        body{
+            background-color: rgb(40, 160, 98);
+            font-size: 20px;
+        }
+        select{
+            width: 150px;
+            height: 30px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+    </style>
+  <script src="./js_select_name.js"></script>
+</head>
+<body>
+    <center>
+        <h2>Uniq Indian People </h2>
+         <br>
+         <select name="" id="people" onchange="pecateg()">
+             <option value="">select category</option>
+             <option value="Indian Actors" id="Actors">Indian Actors</option>
+             <option value="Indian Leaders" id="Leaders">Indian Leaders</option>
+             <option value="Indian Sportman"  id="Sportman">Indian Sportman</option>
+             <option value="Indian Bissnesman" id="Bissnesman">Indian Bissnesman</option>
+         </select> &nbsp; &nbsp; &nbsp;
+
+         <select name="pname" id="pname" onclick="pnm()" >
+            <option value="">select name</option>
+         </select> &nbsp;&nbsp;&nbsp;
+         <!-- <input type="submit" value="submit" onclick="act()"> -->
+     <hr>
+   <img src="" id="myimg" alt=""> <br>
+   <span id="name"></span>
+ 
+    </center>
+    <script>
+ function pecateg(){
+   let a = document.getElementById("people").value;
+
+  if (a == "Indian Actors") {
+      var array = ["choose name ","Salman Khan","Ritik Roshan", "Akshay Kumar", "Varun Dhavan"];
+  }
+  else if (a == "Indian Leaders") {
+      var array = ["Mahatma Gandhi", "Dr.Ambedkar", "Bhagt Singh"];
+  }
+  else if (a == "Indian Sportman") {
+      var array = ["Mahindra singh ", "Virat Kolhi", "PV sindhu"];
+  }
+  else if (a == "Indian Bissnesman") {
+      var array = ["Mukesh Ambani", "Ratan TaTa", "Gautam Adani"];
+  }
+  else {
+      var array = ["choose people"];
+  }
+
+  var string = "";
+  for (var i = 0; i<array.length; i++) {
+      string = string + "<option>" + array[i] + "</option>";
+  }
+  document.getElementById("pname").innerHTML = "<select>" + string + "</select>";
+         
+}
+
+ document.addEventListener("click",()=>{  
+    // function act(){
+       var pnm= document.getElementById("pname").value;
+
+       if (pnm == 'Salman Khan')
+          {
+            const myimg = document.querySelector('img').src="./peoname/salman-khan.jpg";
+
+            document.getElementById('name').innerHTML="<h2> SALMAN KHAN </h2>";
+              
+          }
+          else if(pnm == 'Ritik Roshan'){
+           const myimg= document.querySelector('img').src="./peoname/ritk_roshan.jpg";
+           document.getElementById('name').innerHTML="<h2>RITIK ROSHAN</h2>"
+          }
+          else if(pnm == 'Akshay Kumar'){
+            const myimg = document.querySelector('img').src="./peoname/Akshay-Kumar.jpg";
+            document.getElementById('name').innerHTML="<h2>AKSHAY KUMAR</h2>";
+         }
+         else if(pnm == 'Varun Dhavan'){
+            const myimg = document.querySelector('img').src="./peoname/Akshay-Kumar.jpg";
+            document.getElementById('name').innerHTML="<h2>VARUN DHAWAN</h2>";
+            return;
+         }
+       else{
+        document.getElementById("name").innerHTML=" please select name";
+         }
+
+
+})
+    </script>
+</body>
+</html>

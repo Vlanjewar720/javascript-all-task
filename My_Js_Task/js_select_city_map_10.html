@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choose_country</title>
+    <style>
+   
+        body{
+        background:rgb(35, 102, 123);
+        font-size: 20px;
+        /* color: rgb(235, 18, 18); */
+    }
+    select{
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="style.js"> -->
+</head>
+<body>
+    <center>
+        <!-- Country -->
+        <h1 >Choose your Country ,State ,City </h1> <hr>
+        <table action="">
+            <tr>
+              <td>Choose country: </td> 
+              <td>
+                <select id="country" name="country" onclick="coun()" onmouseover="vald()"> 
+                    <option value="" hidden>Select Your Country</option>
+                    <option id="india">India</option>
+                    <option id="usa">USA</option>
+                    <option id="china">China</option>
+                </select> 
+             </td> 
+           </tr>
+            <tr> <td>Choose State :</td> 
+                <td> <select id="state" onclick="sta()" onmouseover="vald()">
+                         <option value=""hidden>Select Your State</option>
+                </select>  
+            </td> </tr>
+            <tr> <td>Choose city: </td> <td> <select name="city" id="city1" onmouseover="vald()" onclick="city()">
+                <option value=""hidden>Select Your City</option>
+            </select> </td> <td><span id="valid" style="color: rgb(244, 17, 9);"></span></td> </tr> <br><br>
+
+            <!-- <tr> <td> </td> <td><button type="button" onclick="handleclick()" >Submit</button></td></tr> -->
+
+        </table>
+        <hr>    
+          <table>
+            <tr> <td> <span style="font-size: 20px; color: salmon;font-weight: bold;">Country :</span></td> <td> <span id="country1" style="font-size: 25px; color: yellow;"></span> </td> 
+             <td> <span style="font-size: 20px; color: salmon;font-weight: bold">State :</span> </td> <td> <span id="state2" style="font-size: 25px; color: red;"></span></td>  
+             <td>  <span style="font-size: 20px; color: salmon;font-weight: bold">City :</span></td> <td> <span id="city3" style="font-size: 25px; color: white;"></span></td> </tr> 
+          </table>
+               <!-- // nagpur -->
+          <div id="mapnag" hidden>
+              <div id="imgtext" style="background-color:rgb( 214, 238, 221); width: 650px; height: 30px;"><span style="font-size: 25px;">City Population 2023 Is 30,46,687 </span> </div>
+              <img src="./city_map/nagpur_map.png " id="img" width="650" height="338">
+            </div>
+             <!-- // Pune -->
+          <div id="mappune" hidden>
+              <div id="imgtext" style="background-color:rgb( 214, 238, 221); width: 650px; height: 30px;"><span style="font-size: 25px;">City Population 2023 Is 71,66,374 </span> </div>
+              <img src="./city_map/pune_map.png " id="img" width="650" height="338">
+          </div>
+           <!-- // mumbai -->
+           <div id="mapmumbai" hidden>
+               <div id="imgtext" style="background-color:rgb(196, 217, 252); width: 650px; height: 30px;"><span style="font-size: 25px;">City Population 2023 Is 21,296,516 </span> </div>
+               <img src="./city_map/mumbai_map.png " id="img" width="650" height="338">
+          </div>
+
+          <p id="valida"></p>
+    
+        <script>
+            
+            function coun()
+             {
+                let a = document.getElementById("country").value;
+
+                if (a == "India") {
+                    var array = ["Assam","Maharashtra", "Punjab", "Manipur"];
+                }
+                else if (a == "USA") {
+                    var array = ["Califonia", "Florida", "Washingtong"];
+                }
+                else if (a == "China") {
+                    var array = ["Hunan", "Henan", "Shandong"];
+                }
+                else {
+                    var array = ["Choose Your State"];
+                }
+
+                var string = "";
+                for (var i = 0; i<array.length; i++) {
+                    string = string + "<option>" + array[i] + "</option>";
+                }
+                document.getElementById("state").innerHTML = "<select>" + string + "</select>";
+            }
+            
+            function sta(){
+                let b = document.getElementById("state").value;
+                // console.log(b);
+                if(b == "Maharashtra"){
+                    var arrayc = [ "Amravati","Nagpur","Pune", "Mumbai"];
+                   
+                }
+                else if(b == "Punjab") {
+                    var arrayc = ["patiyala","Jalandhar", "Amritsar"];
+                }
+                else if(b == "Manipur") {
+                    var arrayc = ["Mizoram","Imphal", "Amritsar"];
+                }
+                else if(b == "Califonia"){
+                    var arrayc = ["Sanfransisco","	Los Angeles", "	San Jose"];
+                    // document.getElementById("city1").innerHTML = b;
+                }
+                else if(b == "Florida") {
+                    var arrayc = [" ","Miami", "	Tampa"];
+                }
+                else if(b == "Washingtong") {
+                    var arrayc = [" ","Seattle", "Spokane"];
+                }
+                else if(b == "Hunan"){
+                    var arrayc = [" ","Hengyang", "Changsha"];
+                    // document.getElementById("city1").innerHTML = b;
+                }
+                else if(b == "Henan") {
+                    var arrayc = [" ","Luoyang", "Zhengzhou"];
+                }
+                else if(b == "Shandong") {
+                    var arrayc = [" ","Jinan", "Weifang"];
+                }
+                var string = "";
+                for ( var i = 0; i < arrayc.length; i++) {
+                    string = string + "<option>" + arrayc[i] + "</option>";
+                }
+                document.getElementById("city1").innerHTML = "<select>" + string + "</select>";
+            }
+           
+            // function handleclick(){
+            document.addEventListener("click",()=>{ 
+            
+             
+                 var a= document.getElementById("country").value;
+                var b = document.getElementById("state").value;
+                let c = document.getElementById("city1").value;
+              
+                
+                // if (a==''|| b=="" || c=="")
+                // {
+                //     document.getElementById('valid').innerHTML="Fill The Data Properly!!!";
+                //     // alert("Please Fill Details Properly...");
+                //     return false;
+                // }
+
+                if (c == 'Nagpur')
+                {
+                    document.getElementById("mapnag").hidden=false;
+
+                    document.getElementById("mappune").hidden=true;
+                    
+                    
+                }
+                else if(c == 'Pune'){
+                   document.getElementById("mapnag").hidden=true;
+                    document.getElementById("mappune").hidden=false;
+                    
+                    
+                }
+                else if(c == 'Mumbai'){
+                   document.getElementById("mappune").hidden=true;
+
+                    document.getElementById("mapmumbai").hidden=false;
+
+
+                    // document.getElementById("mapmumbai").hidden=true;
+                }
+                else{
+          
+                    // document.getElementById('valida').innerHTML="";
+                }
+                
+                console.log(a+b+c)
+
+                document.getElementById('country1').innerHTML=a
+                document.getElementById('state2').innerHTML=b
+                document.getElementById('city3').innerHTML=c
+
+                
+            })
+            function vald(){
+                 
+                 var a= document.getElementById("country").value;
+                var b = document.getElementById("state").value;
+                let c = document.getElementById("city").value;
+                
+                if(a==''|| b=="" || c=="")
+                {
+                    document.getElementById('valid').innerHTML="";
+                    // alert("Please Fill Details Properly...");
+                    return false;
+                }
+            }
+        </script>
+
+    </center>
+
+</body>
+
+</html>

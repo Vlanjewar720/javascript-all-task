@@ -1,0 +1,36 @@
+<!-- A pro for student marksheet 
+Input - Student name , roll no and marks obtained in variaous subjects 
+Compute - Total ,Percentage  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo_3markshit</title>
+</head>
+<body>
+    <script>
+
+         let stn = prompt("Enter student name:");
+         let sroll = prompt("Enter Roll Number:");
+         let sub1 = prompt("Enter sub1 marks:");
+         let sub2 = prompt("Enter sub2 marks:");
+         let sub3 = prompt("Enter sub3 marks:");
+         let sub4 = prompt("Enter sub4 marks:");
+         let sub5 = prompt("Enter sub5 marks:");
+
+
+         // compute
+         let tot = sub1 + sub2 + sub3 + sub4 + sub5;
+         let per = (tot/500)*100 ;
+
+           // output
+         document.write("----Marksheet-----<br><br>"); 
+         document.write("Student Name :"+":: "+stn+" "+"Roll no :"+":: "+sroll+"<br>"); 
+         document.write("Subject 1 "+":: "+sub1+" "+"Subject 2 "+":: "+sub2+" "+"Subject 3 "+" ::"+sub3+" "+"Subject 4 "+":: "+sub4+" "+"Subject 5 "+":: "+sub5+"<br>"); 
+         document.write("Total mark obtain "+"::"+tot+"<br>"); 
+         document.write("Persentage "+"::"+per+"<br>"); 
+    </script>
+</body>
+</html>

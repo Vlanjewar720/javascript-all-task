@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <title>imgnbar</title>
+  <head>
+    <style>
+      #buttons{
+        position: absolute;
+        top: 10px;
+        left: 340px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+      button{
+       width: 79px;
+       height: 40px;
+       border-radius: 15px;
+       margin-left: 10px ;
+       display: block;
+      }
+      #btn4,#btn5,#btn6{
+        background-color: rgb(83, 219, 135);
+      }
+   </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+      <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+    
+                $("#img").hide(2000);
+            })
+            $("#btn2").click(function(){
+    
+            $("#img").show(2000);
+               })
+            $("#btn3").click(function(){
+    
+            $("#img").toggle(2000);
+               })
+          //  --fade--in--
+          $("#btn4").click(function(){
+
+              $("#img").fadeIn(1000);
+            })  
+            $("#btn5").click(function(){
+
+              $("#img").fadeOut(1000);
+            }) 
+            
+            $("#btn6").click(function(){
+
+              $("#img").fadeToggle(1000);
+            })  
+
+            // ---- slide show functions ----
+            $("#btn7").click(function(){
+              $("#img").slideDown("slow");
+           })  
+           $("#btn8").click(function(){
+              $("#img").slideUp("slow");
+           })  
+           $("#btn9").click(function(){
+              $("#img").slideToggle("slow");
+           })  
+
+           $("#btn11").click(function(){
+              $("#img").stop("slow");
+           }) 
+
+           //----animations----
+           $("#btn10").click(function(){
+              $("#img").animate({
+                 height:'toggle'
+              });
+           });  
+
+        });
+      </script>
+  </head>
+  <body>
+     <img src="../my_JQuery/JQ_Imges/vrt_bar.webp" id="img" alt="">
+     <div id="buttons">
+      <button id="btn1">Hide</button>
+      <button id="btn2">show</button>
+      <button id="btn3">Toggel</button> 
+      <br><br>
+      <button id="btn5">FadeOut</button> 
+      <button id="btn4">FadeIn</button> 
+      <button id="btn6">Fadetoggle</button> 
+      <br>
+      <button id="btn7">SlideUp</button> 
+      <button id="btn8">SlideDown</button> 
+      <button id="btn9">SlideToggle</button> 
+      <br><br>
+      <button id="btn10">anim Toggle</button> 
+      <br>
+      <button id="btn11">Stop</button> 
+  </div> 
+  </body>
+</html>

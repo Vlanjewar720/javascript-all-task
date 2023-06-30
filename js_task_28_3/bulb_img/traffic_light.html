@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traffic_light</title>
+    <style>
+   #traffic{
+      width: 800px;
+      height: 600px;
+      float: right;
+   }
+   button{
+
+    width: 150px;
+    height: 40px;
+    border-radius: 40px;
+    font-size: 23px;
+    margin-left:50px ;
+    
+}
+.button{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 100px;
+
+}
+#red{
+    background-color: red;
+    color: white;
+}
+#yellow{
+    background-color: yellow;
+    color: black;
+}
+#green{
+    background-color: green;
+    color: white;
+   }
+</style>
+</head>
+<body> 
+    <div class="button">
+<button id="red" onclick="document.getElementById('signal').src='./traffic_6.jpg'">STOP</button> 
+<button id="yellow" onclick="document.getElementById('signal').src='./traffic_7.jpg'">READY</button> 
+<button id="green" onclick="document.getElementById('signal').src='./traffic_8.jpg'">GO</button>
+</div>
+
+<div id="traffic"><img src="./traffic_5.jpg" id="signal" alt="" width="800px" height="600px"></div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #text1{
+            width: 250px;
+            height: 40px;
+            background-color: rgb(156, 226, 43);
+            font-size: 20px;
+            border-radius: 10px;
+            border:  5px double red;
+            
+        }
+    #button1,#button2{
+        width: 100px;
+        height: 30px ;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: orangered;
+
+    }
+    body{
+        background-image: url(./school-img-png.png);
+    }
+    #result{
+        font-size: 25px;
+        font-weight: bold;
+
+    }
+    </style>
+    <title>Add array</title>
+</head>
+<body> <center>
+    <input type="text" id="text1"> <br><br>
+    <input type="button" id="button1" value="Add" onclick="add_element_to_array();"> <br> <br>
+    <input type="button" id="button1" value="Diplay" onclick="display_array();">
+    <div id="result"></div>
+
+    <script>
+      
+        var x = 0;
+var array = Array();
+
+function add_element_to_array()
+{
+ array[x] = document.getElementById("text1").value;
+ alert("Element: " + array[x] + " Added at index " + x);
+ x++;
+ document.getElementById("text1").value = "";
+}
+
+function display_array()
+{
+   var e = "<hr/>";   
+   
+    
+   for (var y=0; y<array.length; y++)
+   {
+     e += "Element " + y + " = " + array[y] + "<br/>";
+   }
+   document.getElementById("result").innerHTML = e;
+}
+    </script>
+    </center>
+</body>
+</html>

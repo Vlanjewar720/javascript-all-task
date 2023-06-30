@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.js">
+    <style>
+        body{
+            background-color: coral;
+        }
+        select{
+            width: 300px;
+            height: 50px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+   <center>
+    <h1>you can choose contri stat city</h1>
+    
+    <!-- Country -->
+    <select id="country" name="country" onclick="coun()"> 
+        <option  value="">Select Your Country</option>
+        <option id="India">India</option>
+        <option id="usa">USA</option>
+        <option id="china">China</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <!--State-->
+    <select id="state" onclick="cityf()"> 
+        <option value="">Select Your State</option>  
+    </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <!--City-->
+    <select name="city" id="city">
+        <option value="">Select Your City</option>
+    </select>
+
+    <br><br>
+    
+    <input type="button" onclick="handleclick()" value="Submit"><br><br>
+    <span>Country :</span><span id="country1"></span><br>
+    <span>State :</span><span id="state2"></span><br>
+    <span>City :</span><span id="city3"></span><br><br><br>
+
+    
+    
+    <script>
+        
+        function coun(){
+            var a= document.getElementById("country").value;
+            if(a == "India"){
+                var array =["Maharashtra" , "Karnatak" , "Tamilnadu"];
+                
+            }
+            else if(a == "USA"){
+                var array =["Washington" , "Alaska" , "Los Angelis"];
+            }
+            else if(a == "UK"){
+                var array =["Miami" , "Messa" , "Madison"];
+            }
+            else{
+                var array=["Choose Your State"];
+            }
+       
+        var string="";
+        for(i=0;i<array.length;i++)
+        {
+            string=string+"<option>"+array[i]+"</option>";
+        }
+        document.getElementById("state").innerHTML="<select>"+string+"</select>";
+    }
+
+    // city
+    function cityf(){
+            var b= document.getElementById("state").value;
+            if(b == "Maharashtra"){
+                var array =["Amravati" , "Nagpur" , "wardh", "Gadchiroli", "Gondia", "Bhandara"];
+                
+            }
+            else if(b == "Karnatak"){
+                var array =["Banglore" , "Mysore" , "Manglore", "Bijapure"];
+            }
+            else if(b == "Tamilnadu"){
+                var array =["Chinnai" , "Tiruchirapali" , "Coimbatore"];
+            }
+            if(b == "Washington"){
+                var array =["west verginia" , "wisconsin" , "wyoming"];
+                
+            }
+            else if(b == "Alaska"){
+                var array =["Arizona" , "Delaware" , "Georgia"];
+            }
+            else if(b == "Los Angelis"){
+                var array =["Miami" , "Messa" , "Madison"];
+            }
+            else{
+                var array=["Choose Your City"];
+            }
+              
+        var string="";
+        for(i=0;i<array.length;i++)
+        {
+            string=string+"<option>"+array[i]+"</option>";
+        }
+        document.getElementById("city").innerHTML="<select>"+string+"</select>";
+        }
+       
+
+        function handleclick()
+            {  var a= document.getElementById("country").value;
+                var b = document.getElementById("state").value;
+                let c = document.getElementById("city").value;
+                console.log(a+b+c)
+
+                document.getElementById('country1').innerHTML=a
+                document.getElementById('state2').innerHTML=b
+                document.getElementById('city3').innerHTML=c
+
+                if(a==''|| b=="" || c=="")
+                {
+                    alert("Please Fill Details Properly...")
+                }
+                
+            }
+    </script>
+
+   </center>
+ 
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkbox</title>
+    //<script>
+
+        //----- for single selection use this techniqs------ //
+
+        // function getvalue(){
+            
+            // document.addEventListener("click",()=>{
+
+             
+            // let html = document.getElementById('html');
+            // let css = document.getElementById('css');
+            // let btst = document.getElementById('bts');
+            // let javas = document.getElementById('js');
+
+            //  let datastore=""; 
+        
+            //  if(html.checked)
+            // {
+            
+            //     datastore+=html.value+'';
+            //     result.innerHTML=datastore;
+            //     return true;
+                
+            // }
+            // else if(css.checked)
+            // {
+            //     datastore+=css.value+'';
+            //     result.innerHTML=datastore;
+            
+            // }
+            // else if(btst.checked)
+            // {
+            //     datastore+=btst.value+'';
+            //     result.innerHTML=datastore;
+            
+            // }
+            // else if(javas.checked)
+            // {
+            //     datastore+=javas.value+'';
+            //     result.innerHTML=datastore;
+        
+            // }
+            // else{
+            //     result.innerHTML=" you are not select options";
+
+            // }
+      //------ for multiple selection use this techniq-----  //      
+
+    //   let corse = document.getElementsByName("lang");
+    //   let items="";
+    //   for(var i = 0; i < corse.length;i++)
+    //   {
+    //     if(corse[i].type=='checkbox' && corse[i].checked==true)
+    //     // {
+        
+    //     //    items+=corse[i].value +", ";
+    
+    //     // }
+        
+    //      {
+    //         items+=corse[i].value +", ";
+    //      }
+    // else if(items === ""){
+    //     items='none';
+    // }
+    //     // let result = items.substring(items.length(0),items.length(-2));
+    //     document.getElementById('output').innerHTML=items; 
+       
+    //     }     
+         
+    //  })
+    // 
+   //</script>
+    <script>
+    
+        function Selected() {
+          var selected = [];
+          var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+          checkboxes.forEach(function(checkbox) {
+            selected.push(checkbox.value);
+          });
+          var result = selected.join(", ");
+          if (result === "") {
+            result = "None";
+          }
+          document.getElementById("output").textContent = result;
+        }
+      </script>
+</head>
+<body style="background-color: darkkhaki; font-size: 20px;">
+    <center>
+        <input type="checkbox" id="html" name="lang" value="HTML" onchange="Selected()"><label >HTML</label>
+        <input type="checkbox" id="css" name="lang" value="CSS" onchange="Selected()"><label >CSS</label>
+        <input type="checkbox" id="bts" name="lang" value="BOOTSTRAP" onchange="Selected()"><label>BOOTSTRAP</label>
+        <input type="checkbox" id="js" name="lang" value="JAVASCRIPT" onchange="Selected()"><label>JAVASCRIPT</label>
+        <br><br>
+        <br><br>
+        <p id="output" style="font-size: 30px;"></p>
+    </center>
+</body>
+</html> 

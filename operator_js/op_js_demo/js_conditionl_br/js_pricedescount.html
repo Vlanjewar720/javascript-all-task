@@ -1,0 +1,43 @@
+<!--  Price Discount
+<1500 0
+>=1500 <4500 2%
+>=4000 <6000 4%
+>=6000 8%  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pri_disc</title>
+</head>
+<body>
+    <script>
+        let disc;
+        let price = prompt("Enter a price");
+        document.write("Price is ::"+price+"<br><br>");
+
+        if(price >= 1000 && price < 1500)
+         {
+            disc = price * 0.02;
+            price -=disc;
+            document.write("you have 2% discount::"+ disc +":::"+"price after discount"+ price +"<br>");
+         }
+        else if (price >=1500 && price < 6000)
+        {
+           disc = price * 0.04;
+           price -=disc;
+           document.write("you have 4% discount::"+disc+"::: "+"price after discount::"+price+"<br><br>");
+        }
+         else if(price >=6000)
+         {
+            disc = price* 0.08;
+            price -= disc;
+            document.write("you have 8% disc::"+disc+"::: "+"Price after discount::"+price+"<br>");
+         }
+         else{
+            document.write("you will get disc from 1000");
+         }
+    </script>
+</body>
+</html>

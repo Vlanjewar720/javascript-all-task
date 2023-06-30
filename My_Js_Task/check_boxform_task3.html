@@ -1,0 +1,71 @@
+<!-- check box task -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>ch_task</title>
+    <script src="./check_box_task3.js"></script>
+</head>
+<body align="" bgcolor="yellow" style="margin-left: 40%;">   
+    <form action="" class="w-50 mx-auto" >
+        <h2>The student data fills</h2>
+        <h3>Select Branch</h3>
+        <select id="selt1" name="selt" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option selected disabled hidden>--choose-branch--</option>
+            <option value="Austronat Engineering">Austronat Engineering</option>
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Aerospess Engineering">Aerospess Engineering</option>
+            <option value="Metalargi Engineering">Metalargi Engineering</option>
+            <option value="AI Engineering">AI Engineering</option>
+            <option value="Computer Technology">Computer Technology</option>
+          </select>
+          
+        <br><br>
+        <h3>Select hobbies</h3>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="hobbies"  value="Watching ">
+            <label class="form-check-label">Watching</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="hobbies" value="Playing">
+            <label class="form-check-label">Playing</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" name="hobbies" value="Reading">
+            <label class="form-check-label">Reading</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" name="hobbies" value="Enjoyment" >
+            <label class="form-check-label">Enjoyment</label>
+          </div>
+        <br> <br>
+        <h3>Select Gender</h3>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  id="inlineRadio1" name="Gender" value="Male">
+            <label class="form-check-label" for="inlineRadio1">male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio"  id="inlineRadio2" name="Gender" value="Female">
+            <label class="form-check-label" for="inlineRadio2">Female</label>
+          </div>
+         
+          <br>
+          <br>
+          <input class="btn btn-primary mb-4" type="button" value="Submit" name="Submit" onclick="ok()">
+           <br>
+          <span>Branch::</span><span id="br"></span> <br>
+          <span>hobbies::</span><span id="hob"></span><br>
+          <span>Gender::</span><span id="gend"> </span>
+    </form>
+   
+    <br><br><br>
+   
+   
+   </center>
+
+</body>
+</html>

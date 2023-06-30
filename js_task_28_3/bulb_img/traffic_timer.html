@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>traffic_light</title>
+    <style>
+   #traffic{
+      width: 800px;
+      height: 600px;
+      float: right;
+   }
+   button{
+
+    width: 150px;
+    height: 40px;
+    border-radius: 40px;
+    font-size: 23px;
+    margin-left:50px ;
+    
+}
+.button{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 100px;
+
+}
+#red{
+    background-color: red;
+    color: white;
+}
+#yellow{
+    background-color: yellow;
+    color: black;
+}
+#green{
+    background-color: green;
+    color: white;
+   }
+</style>
+</head>
+<body> 
+    <script>
+
+      setInterval(traffic,6000);
+
+        function traffic(){
+
+
+                  document.getElementById('signal').src='./traffic_6.jpg';
+              
+
+                  document.getElementById('signal').src='./traffic_7.jpg';
+          
+
+                  document.getElementById('signal').src='./traffic_8.jpg';
+                
+                  
+    
+    
+                document.getElementById('signal').src="./traffic_5.jpg";
+
+                  
+
+              
+
+
+           }
+
+        
+</script>
+
+<div id="traffic"><img src="" id="signal" alt="" width="800px" height="600px"></div>
+</body>
+</html>

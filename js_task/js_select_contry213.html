@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choose_country</title>
+    <style>
+    *{
+            width: 350px;
+            position: relative;
+            left: 100px;
+            line-height: 30px;
+            font-size: 20px;
+            
+        }
+        body{
+        background: linear-gradient(to right,purple,rgb(0, 255, 55))
+    }
+    </style>
+    <!-- <link rel="stylesheet" href="style.js"> -->
+</head>
+<body>
+    <center>
+        <!-- Country -->
+        <form action="">
+            <h1 >Choose your Country ,State ,City </h1> <hr>
+            <tr> <td>Choose country: </td> <td><select id="country" name="country" onclick="coun()"> 
+                <option value="">Select Your Country</option>
+                <option id="india">India</option>
+                <option id="usa">USA</option>
+                <option id="china">China</option>
+            </select> </td> </tr>
+            <tr> <td>Choose State </td> <td> <select id="state" onclick="sta()">
+                <option value="">Select Your State</option>
+            </select>  </td> </tr>
+            <tr> <td>Choose city: </td> <td> <select name="city" id="city">
+                <option value="">Select Your City</option>
+            </select> </td> </tr> <br><br>
+            <tr> <td> </td> <td><button type="button" onclick="handleclick()" >Submit</button></td></tr>
+            
+            <br><br> <hr>
+
+        </form>
+        
+        <br><br>
+        <tr> <td> <span>Country :</span></td> <td> <span id="country1"></span> </td> </tr> <br>
+        <tr> <td> <span>State :</span> </td> <td> <span id="state2"></span></td> </tr> <br>
+        <tr> <td>  <span>City :</span></td> <td> <span id="city3"></span></td> </tr> <br>
+       
+    
+        <script>
+            
+            function coun()
+             {
+                let a = document.getElementById("country").value;
+                
+                if (a == "India") {
+                    var array = ["Select Your State","Maharashtra", "Punjab", "Manipur"];
+                }
+                else if (a == "USA") {
+                    var array = ["Califonia", "Florida", "Washingtong"];
+                }
+                else if (a == "China") {
+                    var array = ["Hunan", "Henan", "Shandong"];
+                }
+                else {
+                    var array = ["Choose Your State"];
+                }
+
+                var string = "";
+                for (i = 0; i<array.length; i++) {
+                    string = string + "<option>" + array[i] + "</option>";
+                }
+                document.getElementById("state").innerHTML = "<select>" + string + "</select>";
+            }
+            function sta(){
+                let b = document.getElementById("state").value;
+                // console.log(b);
+                if(b == "Maharashtra"){
+                    var arrayc = [ " ","Mumbai","Nagpur", "Pune"];
+                   
+                }
+                else if(b == "Punjab") {
+                    var arrayc = ["patiyala","Jalandhar", "Amritsar"];
+                }
+                else if(b == "Manipur") {
+                    var arrayc = ["Mizoram","Imphal", "Amritsar"];
+                }
+                else if(b == "Califonia"){
+                    var arrayc = ["Sanfransisco","	Los Angeles", "	San Jose"];
+                    // document.getElementById("city1").innerHTML = b;
+                }
+                else if(b == "Florida") {
+                    var arrayc = [" ","Miami", "	Tampa"];
+                }
+                else if(b == "Washingtong") {
+                    var arrayc = [" ","Seattle", "Spokane"];
+                }
+                else if(b == "Hunan"){
+                    var arrayc = [" ","Hengyang", "Changsha"];
+                    // document.getElementById("city1").innerHTML = b;
+                }
+                else if(b == "Henan") {
+                    var arrayc = [" ","Luoyang", "Zhengzhou"];
+                }
+                else if(b == "Shandong") {
+                    var arrayc = [" ","Jinan", "Weifang"];
+                }
+                var string = "";
+                for (i = 0; i < arrayc.length; i++) {
+                    string = string + "<option>" + arrayc[i] + "</option>";
+                }
+                document.getElementById("city").innerHTML = "<select>" + string + "</select>";
+            }
+            function handleclick()
+            {  
+                 var a= document.getElementById("country").value;
+                var b = document.getElementById("state").value;
+                let c = document.getElementById("city").value;
+                
+                if(a==''|| b=="" || c=="")
+                {
+                    alert("Please Fill Details Properly...");
+                    return false;
+                }
+                console.log(a+b+c)
+
+                document.getElementById('country1').innerHTML=a
+                document.getElementById('state2').innerHTML=b
+                document.getElementById('city3').innerHTML=c
+                
+            }
+        </script>
+
+    </center>
+
+</body>
+
+</html>

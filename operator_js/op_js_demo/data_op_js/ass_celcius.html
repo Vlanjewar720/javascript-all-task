@@ -1,0 +1,27 @@
+<!-- 4. Read temp in centigrade and if it more than 30 display message hot , if it is more than 40 very hot else 
+normal -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>celcius</title>
+</head>
+<body>
+    <script>
+        let temp = prompt("Enter the temp in centigrede:");
+        document.write("the celcious is:"+ temp +"<br>");
+
+        if(temp >= 30 && temp<=40)
+        document.write("It is Hot");
+        else if (temp >= 40)
+        document.write("Temp is very hot");
+
+        else
+        document.write("temp is normal");
+
+
+    </script>
+</body>
+</html>

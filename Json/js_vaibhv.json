@@ -1,0 +1,56 @@
+{
+    "root" : {
+        "users": [
+                    {
+                        "userid": "1",
+                        "firstname": "vaibhav",
+                        "lastname": "lanjewar",
+                        "phone-no": "123456789", 
+                        "email"  : "lanjewarvaibhav@gmail.com",
+                        "salary"  : "10"
+                    },
+                    {
+                        "userid": "2",
+                        "firstname": "ashab",
+                        "lastname": "tirupati",
+                        "phone-no": "123456789", 
+                        "email"  : "ashabtiru123@gmail.com",
+                         "salary"  : "20"
+                    },
+                    {
+                        "userid": "3",
+                        "firstname": "madhuri",
+                        "lastname": "sharma",
+                        "phone-no": "123456789", 
+                        "email"  : "madhuri123@gmail.com",
+                         "salary"  : "30"
+                    },
+                    {
+                        "userid": "4",
+                        "firstname": "ashvini",
+                        "lastname": "adani",
+                        "phone-no": "123456789", 
+                        "email"  : "ashvini123@gmail.com",
+                         "salary"  : "40"
+                    },
+                    {
+                        "userid": "5",
+                        "firstname": "ankit",
+                        "lastname": "ambani",
+                        "phone-no": "123456789", 
+                        "email"  : "ankit123@gmail.com",
+                         "salary"  : "50"
+                    },
+                    {
+                        "userid": "6",
+                        "firstname": "munna",
+                        "lastname": "mehata",
+                        "phone-no": "123456789", 
+                        "email"  : "munna123@gmail.com",
+                         "salary"  : "60"
+                    }
+                ]
+           }
+
+    
+}

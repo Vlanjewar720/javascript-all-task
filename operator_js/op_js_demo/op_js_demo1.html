@@ -1,0 +1,40 @@
+<!-- A pro for Item Bill 
+Input - Item Name , Unit Price , Quantity
+Compute - Price -- Up * Qty 
+Dis-- Price *.05;
+NetPrice --Price -Dis -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo1</title>
+</head>
+<body>
+    <script>
+         //read data   
+        
+        let string = prompt("Enter Item Name");  //Read the data
+        let up = prompt("Enter Unit price");
+        let qty = prompt("Enter quantity");
+
+         // write data
+        document.write("Item name Is"+" :: "+ string +"<br>");
+        document.write("Unit Price Is"+" :: "+ up +"<br>");
+        document.write("Quantity"+" :: "+ qty +"<br> <br>");
+
+        let price = up*qty ;   //compute
+        let dis=price* .2 ;
+        let netp = price - dis ;
+
+         document.write("-----Bill----- <br> <br>");  // print bill
+         document.write("Item name" +" : "+ string +"<br>");
+         document.write("Price"+" : "+ price +"<br>");
+         document.write("Discount"+":"+ dis +" ,"+"Net price"+":"+ netp +"<br>");
+         
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color bg change</title>
+    <style>
+       #output{
+        font-size: 100px;
+        font-family: cursive;
+       }
+       #btn{
+        color: red;
+        width: 100px;
+        border-radius: 15px;
+       }
+    </style>
+    <script>
+
+      // function getgender(){
+        document.addEventListener("click",()=>{
+      let col = document.getElementsByName("color");
+      for(var i = 0; i < col.length;i++)
+      {
+        if(col[i].checked)
+        {
+            console.log(col[i].value);
+            
+           document.body.style.backgroundColor = col[i].value;
+           document.getElementById("output").innerHTML="This is"+"  "+col[i].value
+           
+        }
+      }      
+     
+    })
+       
+        </script>
+</head>
+<body>
+    <!-- <h2>If you want to change backgroundColor Select and submit</h2> <br> -->
+    <input type="radio" name="color" value="red"><Label>Red</Label>
+    <input type="radio" name="color" value="green"><Label>Green</Label>
+    <input type="radio" name="color" value="blue"><Label>Blue</Label>
+    <input type="radio" name="color" value="yellow" ><Label>Yellow</Label>
+    <input type="radio" name="color" value="pink" ><Label>Pink</Label>
+    <input type="radio" name="color" value="teal" ><Label>Teal</Label>
+    <br><br>
+    <!-- <input type="submit" onclick="getgender()" value="Submit" id="btn">   -->
+   <center> <p id="output"></p></center>
+</body>
+</html>
